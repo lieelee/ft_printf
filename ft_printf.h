@@ -11,17 +11,23 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
+#include "libft/libft.h"
 #include <stdarg.h>
 
 #define SPECIFIER "cspdiuxXnfge"
-#define LENTH "hl"
+#define LENGTH "hl"
 #define FLAG "-+0#*.' "
+#define WIDTH "*0123456789"
+#define PRECISION "*0123456789"
+#define LEN_HL "diouxXn"
+#define LEN_L   "efg"
+#define WRONG_LEN_HL "cspnfge"
+#define WRONG_LEN_L "cspdiuxXn"
 
 typedef struct  s_format
 {
-    int         lengh[4];
-    char        flag[8];
+    int         length[2];
+    char        flag[8]; // it can have up to 7 flags in one format
     int         width;
     int         prec;
     char        speci;
